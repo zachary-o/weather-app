@@ -1,0 +1,13 @@
+.hourly-forecast-container {
+    max-height: 120px;
+    border: 1px solid salmon;
+    display: flex;
+    overflow-x: auto;
+}
+
+.hourly-forecast-card {
+   min-width: 110px;
+   height: 200px;
+   line-height: 10px;
+   text-align: center;
+}

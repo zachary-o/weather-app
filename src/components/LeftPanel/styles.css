@@ -1,0 +1,13 @@
+.left-panel-container {
+  background: linear-gradient(#9faef926, #f9bab926, #f9d91526);
+  border-radius: 50px 0 0 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-container {
+  margin: 191px 57px;
+}
+
+

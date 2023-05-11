@@ -1,0 +1,133 @@
+.right-panel-container {
+  background-color: #fff;
+  border-radius: 0 50px 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search-container {
+  margin-top: 50px;
+  position: relative;
+}
+
+.search {
+  width: 460px;
+  height: 44px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border-style: none;
+  background-color: rgba(128, 128, 128, 0.119);
+}
+
+input:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  padding-top: 15px;
+  padding-left: 40px;
+  color: #2f2219;
+  opacity: 50%;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21.48px;
+}
+
+svg {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+hr {
+  width: 460px;
+  margin: 53px;
+  border: none;
+  border-top: 0.5px solid #000;
+  opacity: 50%;
+}
+
+.weather-data {
+  width: 460px;
+  height: 108;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 220px;
+}
+
+.single-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.single-data-key {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.48px;
+  color: #2f2219;
+}
+
+.single-data-value {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21.48px;
+  color: #2f2219;
+}
+
+.sunrise-sunset-container {
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.sunrise-sunset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sunrise,
+.sunset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sunrise-sunset img {
+  width: 50px;
+  height: 30px;
+}
+
+.sunrise-sunset p {
+  font-size: 13.59px;
+  font-weight: 400;
+  line-height: 16.22px;
+  color: #2f2219;
+}
+
+.curve {
+  width: 152px;
+  height: 47px;
+}
+
+.hr-second {
+  align-self: flex-start;
+  width: 220px;
+  border: none;
+  border-top: 0.5px solid #000;
+  opacity: 50%;
+  margin: 0 0 0 53px
+}
