@@ -1,43 +1,94 @@
-import { useState, useEffect } from "react";
-import { getCityWeather } from "../../utils/getCityWeather";
-
 import "./styles.css";
-import image from "../../assets/images/sunny.svg";
 
-const LeftPanel = () => {
-  const [weather, setWeather] = useState({});
+const LeftPanel = ({ weather }) => {
+  const changePicture = () => {
+    if (weather.current.condition.text === "Sunny") {
+      return "sunny";
+    } else if (
+      weather.current.condition.text === "Moderate or heavy rain with thunder"
+    ) {
+      return "thunderstorm";
+    } else if (weather.current.condition.text === "Light rain") {
+      return "rainy";
+    } else if (weather.current.condition.text === "Partly cloudy") {
+      return "cloudy";
+    } else if (weather.current.condition.text === "Patchy heavy snow") {
+      return "snowy";
+    } else if (weather.current.condition.text === "Light drizzle") {
+      return "rainy";
+    } else if (weather.current.condition.text === "Light rain shower") {
+      return "rainy";
+    } else {
+      return "rainbow";
+    }
+    //, Overcast, Mist, Partly Cloudy, Patchy Rain possible, Clear, Light drizzle, Light rain shower
+  };
 
-  useEffect(() => {
-    const fetchWeatherData = async () => {
-      try {
-        const data = await getCityWeather();
-        setWeather({
-          current: data.current,
-          location: data.location,
-        });
-      } catch (error) {
-        console.log("Error fetching weather data:", error);
+  const changeBackgroundColor = () => {
+    if (weather && weather.current && weather.current.condition) {
+      if (weather.current.condition.text === "Sunny") {
+        return "linear-gradient(#9faef926, #f9bab926, #f9d91526)";
+      } else if (
+        weather.current.condition.text === "Moderate or heavy rain with thunder"
+      ) {
+        return "linear-gradient(90deg, rgba(31,140,250,1) 18%, rgba(20,47,89,1) 100%)";
+      } else if (weather.current.condition.text === "Light rain") {
+        return "linear-gradient(90deg, rgba(145,209,246,1) 18%, rgba(30,150,255,1) 100%)";
+      } else if (weather.current.condition.text === "Partly cloudy") {
+        return "linear-gradient(115deg, rgba(226,199,252,1) 7%, rgba(255,255,255,1) 100%)";
+      } else if (weather.current.condition.text === "Patchy heavy snow") {
+        return "linear-gradient(115deg, rgba(175,222,250,1) 11%, rgba(255,255,255,1) 100%)";
+      } else if (weather.current.condition.text === "Light drizzle") {
+        return "linear-gradient(115deg, rgba(175,222,250,1) 11%, rgba(15,208,246,1) 100%)";
+      } else if (weather.current.condition.text === "Light rain shower") {
+        return "linear-gradient(115deg, rgba(56,175,246,1) 11%, rgba(26,129,149,1) 100%)";
+      } else if (weather.current.condition.text === "Clear") {
+        return "linear-gradient(115deg, rgba(3,73,254,1) 0%, rgba(0,33,66,1) 100%)";
       }
-    };
+    }
 
-    fetchWeatherData();
-  }, []);
+    return "white";
+  };
 
-  
+  const containerStyle = {
+    background: changeBackgroundColor(),
+  };
 
+  const changeTextColor = () => {
+    if (weather && weather.current && weather.current.condition) {
+      if (weather.current.condition.text === "Clear") {
+        return "lightyellow";
+      }
+    }
+    return "black";
+  };
+
+  const textStyle = {
+    color: changeTextColor(),
+  };
   return (
-    <section className="left-panel-container">
+    <section className="left-panel-container" style={containerStyle}>
       {weather.current && weather.location ? (
         <div className="data-container">
-          <img src={image} alt="weather image" />
-          <div className="text-data-container">
-            <h1>
-              {weather.current.temp_c}
-              <span>&#8451;</span>
-            </h1>
-            <h3>{weather.location.name}</h3>
-            <h5>{weather.current.condition.text}</h5>
-            <h5>{weather.location.localtime}</h5>
+          <img
+            src={`./images/${changePicture()}.svg`}
+            alt="weather image"
+            className="weather-picture"
+          />
+          <div className="text-data-container" style={textStyle}>
+            <div className="top-row">
+              <h1>
+                {Math.round(weather.current.temp_c)}
+                <sup className="h1-sup">&#8451;</sup>
+              </h1>
+              <div className="top-row-secondary">
+                <h5>{weather.current.condition.text}</h5>
+                <h5>{weather.location.localtime}</h5>
+              </div>
+            </div>
+            <div className="bottom-row">
+              <h2>{weather.location.name}</h2>
+            </div>
           </div>
         </div>
       ) : (

@@ -1,5 +1,4 @@
 .left-panel-container {
-  background: linear-gradient(#9faef926, #f9bab926, #f9d91526);
   border-radius: 50px 0 0 50px;
   display: flex;
   justify-content: center;
@@ -7,7 +6,57 @@
 }
 
 .data-container {
-  margin: 191px 57px;
+  display: flex;
+  flex-direction: column;
+  width: 480px;
 }
 
+.weather-picture {
+  max-width: 300px;
+  max-height: 300px;
+  align-self: flex-end;
+}
 
+.text-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-row-secondary {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-left: 10px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 192px;
+  font-weight: 400;
+  position: relative;
+  padding: 0;
+}
+
+.h1-sup {
+  font-size: 0.2em;
+  font-size: 44.81px;
+  position: absolute;
+  top: 40px;
+}
+
+h2 {
+  font-size: 73.46px;
+  padding: 0;
+}
+
+h5 {
+  font-size: 28px;
+  font-weight: 300;
+}

@@ -1,16 +1,16 @@
+import "./styles.css"
 
 const HourlyForecast = ({ weather }) => {
 
-  console.log(weather)
   return (
     <div className="hourly-forecast-container">
       {weather.map((card, index) => (
         <div key={index} className="hourly-forecast-card">
-          <p>{card.time}</p>
-          <img src={card.condition.icon} alt="" />
-          <p>
+          <p className="time">{card.time.slice(-5)}</p>
+          <img src={card.condition.icon} alt="" className="weather-icon"/>
+          <p className="temperature">
             {card.temp_c}
-            <span>&#8451;</span>
+            <sup className="temperature-index">&#8451;</sup>
           </p>
         </div>
       ))}
