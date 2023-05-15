@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const data = await getCityWeather(currentLocation.city);
+        const data = await getCityWeather(currentLocation);
         setWeather(data);
       } catch (error) {
         console.log("Error fetching weather data:", error);
