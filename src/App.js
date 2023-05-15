@@ -7,7 +7,7 @@ import LeftPanel from "./components/LeftPanel/LeftPanel";
 
 function App() {
   const [weather, setWeather] = useState({});
-  const [currentLocation, setCurrentLocation] = useState({});
+  const [currentLocation, setCurrentLocation] = useState("");
 
   useEffect(() => {
     setCurrentLocation(getLocation());
