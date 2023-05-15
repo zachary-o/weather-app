@@ -49,11 +49,14 @@ h1 {
   font-size: 44.81px;
   position: absolute;
   top: 40px;
+  
 }
 
 h2 {
   font-size: 73.46px;
   padding: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 h5 {
