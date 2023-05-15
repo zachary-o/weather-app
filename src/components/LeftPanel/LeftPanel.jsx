@@ -21,7 +21,7 @@ const LeftPanel = ({ weather }) => {
     } else {
       return "rainbow";
     }
-    //, Overcast, Mist, Partly Cloudy, Patchy Rain possible, Clear, Light drizzle, Light rain shower
+    //, Overcast, Mist, Patchy Rain possible, Clear, 
   };
 
   const changeBackgroundColor = () => {
@@ -87,7 +87,11 @@ const LeftPanel = ({ weather }) => {
               </div>
             </div>
             <div className="bottom-row">
-              <h2>{weather.location.name}</h2>
+              <h2>
+                {weather.location.name === "Kiev"
+                  ? "Kyiv"
+                  : weather.location.name}
+              </h2>
             </div>
           </div>
         </div>
