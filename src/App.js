@@ -10,7 +10,15 @@ function App() {
   const [currentLocation, setCurrentLocation] = useState("");
 
   useEffect(() => {
-    setCurrentLocation(getLocation());
+    const fetchLocation = async () => {
+      try {
+        const data = await getLocation();
+        setCurrentLocation(data);
+      } catch (error) {
+        console.log("Error fetching location:", error);
+      }
+    };
+    fetchLocation();
   }, []);
 
   useEffect(() => {
@@ -24,6 +32,7 @@ function App() {
     };
     fetchWeatherData();
   }, []);
+
 
   return (
     <div className="container">

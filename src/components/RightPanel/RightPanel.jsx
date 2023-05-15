@@ -13,14 +13,12 @@ import Search from "../Search/Search";
 
 const RightPanel = ({ weather, setWeather }) => {
   const [searchCity, setSearchCity] = useState("");
-
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
         const data = await getCities(searchCity);
-        console.log(data);
         setSearchResults(data);
       } catch (error) {
         console.log("Error fetching search query:", error);
