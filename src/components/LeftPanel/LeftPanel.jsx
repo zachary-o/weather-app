@@ -21,7 +21,7 @@ const LeftPanel = ({ weather }) => {
     } else {
       return "rainbow";
     }
-    //, Overcast, Mist, Patchy Rain possible, Clear, 
+    //, Overcast, Mist, Patchy Rain possible, Clear,
   };
 
   const changeBackgroundColor = () => {

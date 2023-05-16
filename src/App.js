@@ -6,8 +6,8 @@ import RightPanel from "./components/RightPanel/RightPanel";
 import LeftPanel from "./components/LeftPanel/LeftPanel";
 
 function App() {
-  const [weather, setWeather] = useState({});
   const [currentLocation, setCurrentLocation] = useState("");
+  const [weather, setWeather] = useState({});
 
   useEffect(() => {
     const fetchLocation = async () => {
@@ -31,8 +31,7 @@ function App() {
       }
     };
     fetchWeatherData();
-  }, []);
-
+  }, [currentLocation]);
 
   return (
     <div className="container">

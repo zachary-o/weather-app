@@ -56,7 +56,8 @@ h2 {
   font-size: 73.46px;
   padding: 0;
   overflow-wrap: break-word;
-  hyphens: auto;
+  word-wrap: break-word;
+  hyphens: manual;
 }
 
 h5 {
