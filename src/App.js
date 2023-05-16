@@ -30,7 +30,9 @@ function App() {
         console.log("Error fetching weather data:", error);
       }
     };
-    fetchWeatherData();
+    if (currentLocation) {
+      fetchWeatherData();
+    }
   }, [currentLocation]);
 
   return (

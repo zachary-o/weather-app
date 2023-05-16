@@ -72,7 +72,7 @@ const LeftPanel = ({ weather }) => {
         <div className="data-container">
           <img
             src={`./images/${changePicture()}.svg`}
-            alt="weather image"
+            alt="weather"
             className="weather-picture"
           />
           <div className="text-data-container" style={textStyle}>

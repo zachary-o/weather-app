@@ -8,7 +8,6 @@ import sun from "../../assets/icons/sunrise.svg";
 import arrow from "../../assets/icons/arrow.svg";
 import curve from "../../assets/icons/curve.svg";
 
-
 import Search from "../Search/Search";
 
 const RightPanel = ({ weather, setWeather }) => {
@@ -27,6 +26,22 @@ const RightPanel = ({ weather, setWeather }) => {
     fetchSearchResults();
   }, [searchCity]);
 
+  const forecastEdit = () => {
+    if (!weather.location && !weather.forecast) {
+      return;
+    }
+    const currentHour = weather.location.localtime.slice(-5, -3);
+    const nextHours = weather.forecast.forecastday[0].hour.filter((el) => {
+      if (el.time.slice(-5, -3) > currentHour) {
+        return el;
+      }
+    });
+
+    const result = [...nextHours, ...weather.forecast.forecastday[1].hour];
+
+    return result;
+  };
+
   return (
     <section>
       {weather.current && weather.forecast ? (
@@ -44,14 +59,8 @@ const RightPanel = ({ weather, setWeather }) => {
             setSearchCity={setSearchCity}
           />
 
-          <hr
-            className={
-              (searchResults.length > 0
-                ? "hr-active"
-                : "")
-            }
-          />
-          <HourlyForecast weather={weather.forecast.forecastday[0].hour} />
+          <hr className={searchResults.length > 0 ? "hr-active" : ""} />
+          <HourlyForecast weather={forecastEdit()} />
           <hr />
           <div className="weather-data">
             <div className="left-column">

@@ -68,7 +68,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-self: center;
-  align-items: start;
+  align-items: flex-start;
   position: absolute;
   border-radius: 0 0 30px 30px;
 }
@@ -80,7 +80,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-self: center;
-  align-items: start;
+  align-items: flex-start;
   position: absolute;
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
