@@ -11,7 +11,7 @@
   padding-left: 50px;
   border-radius: 30px;
   border-style: none;
-  background-color: rgba(47, 34, 25, 0.04);
+  background-color: rgba(245, 222, 179, 0.501);
   font-size: 18px;
   font-weight: 300;
   line-height: 21.48px;
@@ -42,7 +42,6 @@ input:focus {
   font-weight: 300;
   line-height: 21.48px;
 }
-
 
 .search-svg {
   position: absolute;
@@ -104,4 +103,57 @@ input:focus {
 .result-container:hover {
   width: 100%;
   background-color: #e6e6e6;
+}
+
+@media only screen and (max-width: 1200px) {
+  .search-container {
+    margin-top: 20px;
+  }
+  .search {
+    width: 300px;
+  }
+  .search-active {
+    width: 300px;
+  }
+  .search-results-container {
+    width: 300px;
+  }
+  .search-results-container-active {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .search-container {
+    margin-top: 0;
+  }
+  .search {
+    width: 270px;
+    height: 36px;
+  }
+  .search-active {
+    width: 270px;
+    height: 36px;
+  }
+  .search-svg {
+    width: 20px;
+    position: absolute;
+    left: 20px;
+    top: 8px;
+  }
+  .search-clear-active {
+    width: 20px;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+  }
+  .search-results-container {
+    width: 270px;
+  }
+  .search-results-container-active {
+    width: 270px;
+  }
+  .result-container {
+    font-size: 14px;
+  }
 }

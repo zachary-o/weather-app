@@ -1,12 +1,11 @@
 .right-panel-container {
-  background: #fff;
+  background: #c6bdbd63;
   border-radius: 0 50px 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
-
   transition: background-color 250ms;
 }
 
@@ -48,7 +47,7 @@ hr {
 
 .weather-data {
   width: 460px;
-  height: 108;
+  height: 108px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -119,4 +118,104 @@ hr {
 .curve {
   align-self: center;
   width: 126px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .right-panel-container {
+    width: 400px;
+    height: 650px;
+  }
+  .right-panel-container-active {
+    width: 400px;
+    height: 650px;
+  }
+  hr {
+    width: 350px;
+  }
+  .hr-active {
+    width: 350px;
+  }
+  .weather-data {
+    width: 350px;
+    margin-bottom: 20px;
+  }
+  .left-column,
+  .right-column {
+    width: 170px;
+  }
+  .single-data-key {
+    font-size: 12px;
+  }
+  .single-data-value {
+    font-size: 12px;
+  }
+
+  .sunrise-sunset img {
+    width: 75px;
+    height: 30px;
+  }
+  .sunrise-sunset p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16.22px;
+    color: #2f2219;
+    margin-top: 5px;
+  }
+
+  .curve {
+    align-self: center;
+    width: 110px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .right-panel-container {
+    width: 350px;
+    height: 550px;
+  }
+  .right-panel-container-active {
+    width: 350px;
+    height: 550px;
+  }
+  hr {
+    width: 320px;
+    margin: 20px 33px;
+  }
+  .hr-active {
+    width: 320px;
+    margin: 20px 33px;
+  }
+  .weather-data {
+    width: 320px;
+    margin-bottom: 20px;
+  }
+  .left-column,
+  .right-column {
+    width: 150px;
+  }
+  
+  
+  .single-data-key {
+    font-size: 10px;
+  }
+  .single-data-value {
+    font-size: 10px;
+  }
+
+  .sunrise-sunset img {
+    width: 60px;
+    height: 25px;
+  }
+  .sunrise-sunset p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.22px;
+    color: #2f2219;
+    margin-top: 5px;
+  }
+
+  .curve {
+    align-self: center;
+    width: 94px;
+  }
 }
