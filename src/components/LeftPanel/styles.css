@@ -121,6 +121,7 @@ h5 {
   .left-panel-container {
     width: 350px;
     height: 550px;
+    padding: 20px;
   }
   .data-container {
     display: flex;

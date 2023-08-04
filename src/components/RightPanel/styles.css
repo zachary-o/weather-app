@@ -1,5 +1,5 @@
 .right-panel-container {
-  background: #c6bdbd63;
+  background: #ddd6d663;
   border-radius: 0 50px 50px 0;
   display: flex;
   justify-content: center;
@@ -51,6 +51,7 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  margin-bottom: 30px;
 }
 .left-column,
 .right-column {
@@ -217,5 +218,18 @@ hr {
   .curve {
     align-self: center;
     width: 94px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .right-panel-container {
+    width: 356px;
+    max-height: 500px;
+    border-radius: 0 0 50px 50px ;
+  }
+  .right-panel-container-active {
+    width: 356px;
+    max-height: 500px;
+    border-radius: 0 0 50px 50px ;
   }
 }
