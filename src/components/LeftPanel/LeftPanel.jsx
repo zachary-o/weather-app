@@ -135,7 +135,9 @@ const LeftPanel = ({ weather }) => {
 
   const changeTextColor = () => {
     if (weather && weather.current && weather.current.condition) {
-      if (weather.current.condition.text === "Clear") {
+      if (
+        weather.current.condition.text.toLowerCase() === "Clear".toLowerCase()
+      ) {
         return "lightyellow";
       }
     }
@@ -145,6 +147,7 @@ const LeftPanel = ({ weather }) => {
   const textStyle = {
     color: changeTextColor(),
   };
+  
   return (
     <section className="left-panel-container" style={containerStyle}>
       {weather.current && weather.location ? (
