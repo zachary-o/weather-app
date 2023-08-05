@@ -2,30 +2,66 @@ import "./styles.css";
 
 const LeftPanel = ({ weather }) => {
   const changePicture = () => {
-    if (weather.current.condition.text === "Sunny") {
+    if (
+      weather.current.condition.text.toLowerCase() === "Sunny".toLowerCase()
+    ) {
       return "sunny";
     } else if (
-      weather.current.condition.text === "Moderate or heavy rain with thunder"
+      weather.current.condition.text.toLowerCase() ===
+      "Moderate or heavy rain with thunder".toLowerCase()
     ) {
       return "thunderstorm";
-    } else if (weather.current.condition.text === "Light rain") {
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Light rain".toLowerCase()
+    ) {
       return "rainy";
-    } else if (weather.current.condition.text === "Partly cloudy") {
-      return "cloudy";
-    } else if (weather.current.condition.text === "Patchy heavy snow") {
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Partly cloudy".toLowerCase()
+    ) {
+      return "partly-cloudy";
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Patchy heavy snow".toLowerCase()
+    ) {
       return "snowy";
-    } else if (weather.current.condition.text === "Light drizzle") {
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Light drizzle".toLowerCase()
+    ) {
       return "rainy";
-    } else if (weather.current.condition.text === "Light rain shower") {
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Light rain shower".toLowerCase()
+    ) {
       return "rainy";
-    } else if (weather.current.condition.text === "Overcast") {
+    } else if (
+      weather.current.condition.text.toLowerCase() === "Overcast".toLowerCase()
+    ) {
       return "overcast";
-    } else if (weather.current.condition.text === "Clear") {
+    } else if (
+      weather.current.condition.text.toLowerCase() === "Clear".toLowerCase()
+    ) {
       return "clear";
+    } else if (
+      weather.current.condition.text.toLowerCase() === "Mist".toLowerCase()
+    ) {
+      return "mist";
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Patchy light rain with thunder".toLowerCase()
+    ) {
+      return "rain-thunder";
+    } else if (
+      weather.current.condition.text.toLowerCase() ===
+      "Patchy Rain possible".toLowerCase()
+    ) {
+      return "rainy";
     } else {
       return "rainbow";
     }
-    //, , Mist, Patchy Rain possible,, Patchy light rain with thunder,
+    // add missing weather conditions and then search for svg
   };
 
   const changeBackgroundColor = () => {
