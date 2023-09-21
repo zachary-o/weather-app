@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = " https://api.weatherapi.com/v1";
+const BASE_URL = "https://api.weatherapi.com/v1";
 
 export const getCities = async (cityName) => {
   if (!cityName) {
